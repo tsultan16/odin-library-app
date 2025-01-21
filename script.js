@@ -5,6 +5,7 @@ function Book(title, author, read=false) {
   this.title = title;
   this.author= author;
   this.read = read;
+  this.removed = false;
   this.html_card = null;
 
   this.getInfo = function () {
@@ -18,17 +19,20 @@ function addBookToLibrary(title, author) {
     let newBook = new Book(title, author);
     
     // create book card element, add to shelf
-    const card = createBookCard(title, author);
+    const card = createBookCard(title, author, myLibrary.length);
     shelfGrid.appendChild(card);
     newBook.html_card = card;    
     myLibrary.push(newBook);
 }
 
-function createBookCard(title, author) {
+function createBookCard(title, author, array_index) {
     // create book card element, add to shelf
     const card = document.createElement("div");
     card.classList.add("book-card");
 
+    const book_info = document.createElement("div");
+    book_info.classList.add("book-info");
+    
     const p_title = document.createElement("p");
     p_title.textContent = title;
     p_title.classList.add("book-title");
@@ -37,8 +41,35 @@ function createBookCard(title, author) {
     p_author.textContent = author;
     p_author.classList.add("book-author");
 
-    card.appendChild(p_title);
-    card.appendChild(p_author);
+    book_info.appendChild(p_title);
+    book_info.appendChild(p_author);
+    
+    const remove_book = document.createElement("div");
+    remove_book.classList.add("remove-book");
+    remove_btn = document.createElement("button");
+    remove_btn.id = "remove-btn";
+    remove_btn.textContent = "X";
+    // add array index of book to remove buttons data attribute, will use this later to delete the book card
+    remove_btn.dataset.index = String(array_index);
+    
+    remove_btn.addEventListener("click", (e) => {
+        const target = e.target;
+    
+        index = parseInt(target.dataset.index);
+        console.log(`Clicked remove button on book at array index ${index}`);    
+        // get book object from array
+        book_obj = myLibrary[index];
+        book_obj.removed = true;
+        // remove the book card from html 
+        const card = book_obj.html_card;
+        card.remove();
+
+    });
+    
+    remove_book.appendChild(remove_btn);
+    card.appendChild(book_info);
+    card.appendChild(remove_book);
+
     return card;
 }
 
@@ -52,7 +83,7 @@ function printAllBooks() {
  
 const shelfGrid = document.querySelector(".shelf-container");
 const dialog = document.querySelector("dialog");
-const add_book_btn = document.querySelector(".add-btn");
+const add_book_btn = document.querySelector("#add-btn");
 const dialog_cancel_btn = document.querySelector("#cancel-btn"); 
 const dialog_confirm_btn = document.querySelector("#confirm-btn"); 
 const form_input_title = document.querySelector("#title");

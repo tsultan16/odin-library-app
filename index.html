@@ -12,6 +12,16 @@
 <body>
     <h1>My Library</h1>
     <div class="shelf-container">
+        <div class="book-card">
+            <div class="book-info">
+                <p class="book-title">Dummy Title</p>
+                <p class="book-author">Dummy Author</p>
+            </div>
+            <div class="remove-book">
+                <button id="remove-btn">X</button>
+            </div>
+        </div>
+    
     </div>
       
     <dialog id="add-book-dialog">
@@ -28,8 +38,8 @@
             </div>
 
             <div class="form-buttons">
-                <button id="cancel-btn" value="cancel" formmethod="dialog">Cancel</button>
-                <button id="confirm-btn" value="confirm">Confirm</button>
+                <button class="btn1" id="cancel-btn" value="cancel" formmethod="dialog">Cancel</button>
+                <button class="btn1" id="confirm-btn" value="confirm">Confirm</button>
             </div>
 
             <div id="invalid-msg"></div>
@@ -38,7 +48,7 @@
     </dialog>
 
     <div class="button-container">
-        <button class="add-btn">Add Book</button>
+        <button class="btn1" id="add-btn">Add Book</button>
     </div>
  
 
