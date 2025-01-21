@@ -20,7 +20,7 @@ body > h1 {
     text-align: center;
 }
 
-.container {
+.shelf-container {
     /* width: 60vw; */
     margin: 1em;
     padding: 2em 0;
@@ -30,7 +30,7 @@ body > h1 {
     place-items: center;
 
     /* gap: 0.1em;  */
-    border: 2px solid rgb(88, 77, 1);    
+    border: 5px solid rgb(88, 77, 1);    
 }
 
 .book-card {
@@ -38,7 +38,7 @@ body > h1 {
     width: 5em;
     
     background-color: var(--color-card);
-    border-radius: 0.1em;
+    border-radius: 0.2em;
     padding: 1em;
     /* box-shadow: 2px 3px 5px 1px rgba(0, 0, 255, .2); */
 
@@ -46,4 +46,47 @@ body > h1 {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.book-card > p {
+    font-size: 0.65em;
+}
+
+/* Backdrop for add book form */
+::backdrop {
+    background-image: linear-gradient(
+      45deg,
+      magenta,
+      rebeccapurple,
+      dodgerblue,
+      green
+    );
+    opacity: 0.75;
+}
+
+dialog h3 {
+    text-align: center;
+}
+
+dialog .input-field {
+    /* display: flex; */
+    margin: 1em 1em;
+}
+
+dialog label {
+    display: inline-block;
+    min-width: 5em;
+    text-align: right;
+} 
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+
+
+
+
 
