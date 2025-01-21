@@ -65,7 +65,25 @@ function createBookCard(title, author, array_index) {
         card.remove();
 
     });
+
+    read_btn = document.createElement("button");
+    read_btn.id = "read-status-btn";
+    read_btn.textContent = "R";
+    // add array index of book to remove buttons data attribute, will use this later to toggle read status in book object
+    read_btn.dataset.index = String(array_index);
     
+    read_btn.addEventListener("click", (e) => {
+        const target = e.target;
+        target.classList.toggle("read-status-toggled");
+
+        index = parseInt(target.dataset.index);
+        console.log(`Clicked read status button on book at array index ${index}`);    
+        // get book object from array
+        book_obj = myLibrary[index];
+        book_obj.read = (book_obj.read ? false: true);
+    });
+    
+    remove_book.appendChild(read_btn);
     remove_book.appendChild(remove_btn);
     card.appendChild(book_info);
     card.appendChild(remove_book);
