@@ -63,6 +63,36 @@ body > h1 {
     opacity: 0.75;
 }
 
+dialog {
+    position: relative;
+    margin: 0 auto;
+    top: 25%;
+    
+    padding: 1em;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: 0;
+    background-color: rgb(16, 80, 58);
+    color: white;
+    font-weight: bold;
+    padding: 0.5em 2em;  
+    border-radius: 0.5em;      
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(26, 117, 85, 0.897);
+    border: 1px solid whitesmoke;
+}
+
+
 dialog h3 {
     text-align: center;
 }
@@ -83,6 +113,23 @@ dialog label {
     justify-content: center;
     align-items: center;
     gap: 1em;
+}
+
+input {
+    font-size: 1em;
+    height: 1.8em;
+    width: 14em;
+    border-radius: 0.2em;
+    border: 1px solid rgb(189, 188, 188);
+    padding: 0.2em 0.4em;
+}
+
+input:focus {
+    outline-color: #084821ae;
+    outline-style: solid;
+    outline-width: 2px;
+    box-shadow: 3px 3px 5px 1px rgba(98, 98, 145, 0.776);
+
 }
 
 
