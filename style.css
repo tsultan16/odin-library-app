@@ -12,6 +12,10 @@ body {
 
     background-image: url("./images/ganapathy-kumar-unsplash.jpg");
     background-size: cover; /* scales and crops image to fit the container */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 body > h1 {
@@ -21,16 +25,17 @@ body > h1 {
 }
 
 .shelf-container {
-    /* width: 60vw; */
+    width: 60vw; 
+
     margin: 1em;
     padding: 2em 0;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     place-items: center;
+    gap: 1em;  
 
-    /* gap: 0.1em;  */
-    border: 5px solid rgb(88, 77, 1);    
+    border: 1em solid rgb(88, 77, 1);    
 }
 
 .book-card {

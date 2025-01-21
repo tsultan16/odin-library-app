@@ -116,6 +116,8 @@ dialog_confirm_btn.addEventListener("click", (event) => {
         form_invalid_msg.textContent = "";
         // add book to library
         addBookToLibrary(title, author);
+        form_input_title.value = "";
+        form_input_author.value = ""; 
         dialog.close();
     }
 
