@@ -3,21 +3,34 @@
     padding: 0;
     box-sizing: border-box;
 
-    --color-card: rgb(227, 227, 129);
+    --color-card: rgb(208, 143, 63);
 }
 
 body {
     height: 100vh;
+    width: 100vw;
 
     background-image: url("./images/ganapathy-kumar-unsplash.jpg");
     background-size: cover; /* scales and crops image to fit the container */
 }
 
+body > h1 {
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
 .container {
+    /* width: 60vw; */
+    margin: 1em;
+    padding: 2em 0;
+
     display: grid;
-    grid-template-columns: repeat(5, minmax(100px, 1fr));
-    gap: 0.5em; 
-    border: 2px solid green;    
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+
+    /* gap: 0.1em;  */
+    border: 2px solid rgb(88, 77, 1);    
 }
 
 .book-card {
