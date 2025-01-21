@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 
-    --color-card: rgb(208, 143, 63);
+    --color-card: rgba(255, 182, 92, 0.931);
 }
 
 body {
@@ -35,17 +35,19 @@ body > h1 {
     place-items: center;
     gap: 1em;  
 
-    border: 1em solid rgb(88, 77, 1);    
+    border: 1px solid rgb(251, 246, 209);   
+    border-radius: 0.2em;
+    box-shadow: 2px 3px 5px 1px rgba(214, 231, 255, 0.55);  
 }
 
 .book-card {
     height: 8em;
-    width: 5em;
+    width: 6em;
     
     background-color: var(--color-card);
     border-radius: 0.2em;
     padding: 0.5em;
-    /* box-shadow: 2px 3px 5px 1px rgba(0, 0, 255, .2); */
+    box-shadow: 2px 3px 5px 1px rgba(214, 231, 255, 0.55); 
     
     display: flex;
     flex-direction: column;
@@ -62,6 +64,7 @@ body > h1 {
 
 .book-card p {
     font-size: 0.65em;
+    text-align: center;
 }
 
 .remove-book {
